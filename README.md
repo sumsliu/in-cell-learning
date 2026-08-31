@@ -71,12 +71,21 @@ remain bit-identical, verifiable by integer-domain re-quantization.
 ## Quick start
 
 ```bash
+python experiments/exp5_qil.py --model Qwen/Qwen3-1.7B-Base --n-facts 1000
+```
+
+Loads the published 4-bit release, trains a bounded in-cell fill (every
+weight re-parameterized to move only inside its quantization cell), and
+verifies in the integer domain that re-quantization returns the released
+codes and scales exactly.
+
+```bash
 python experiments/exp0_clip_rate.py --model Qwen/Qwen3-1.7B-Base --n-facts 1000
 ```
 
-Loads the published 4-bit release, trains a LoRA on synthetic facts,
-clip-merges it into the frozen cells, and verifies invariance in the
-integer domain.
+The clip-merge control (path A), kept for the ablation: trains an
+unconstrained adapter first, then clips the merged weights back into the
+cells.
 
 ## Citation
 
