@@ -1,6 +1,6 @@
 # In-Cell Learning
 
-> **A 4-bit weight is a cell, not a point.**
+> $\Large\textcolor{blue}{\textbf{A 4-bit weight is a cell, not a point.}}$
 
 Code release for **"In-Cell Learning: Deployed Language Models Can Learn New
 Knowledge Without Changing a Single Stored Bit"** (arXiv:2608.20873).
