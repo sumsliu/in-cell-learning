@@ -4,6 +4,8 @@
 
 <p align="center"><img src="assets/paradigm_abstract_2x.png" alt="In-cell learning turns quantization error into a versioned learning medium" width="100%"></p>
 
+> **Quantization error, long written off as waste, turns out to be pre-paid room: a deployed model can learn inside it, rehearse, and consolidate — acquiring the memory lifecycle that biology builds from complementary learning systems — while the file it shipped as never changes by a single bit.**
+
 Code release for **"In-Cell Learning: Deployed Language Models Can Learn New
 Knowledge Without Changing a Single Stored Bit"** (arXiv:2608.20873).
 
