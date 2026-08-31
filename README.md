@@ -1,6 +1,8 @@
 # In-Cell Learning
 
-> $\Large\textcolor{blue}{\textbf{A 4-bit weight is a cell, not a point.}}$
+<p align="center"><img src="assets/maxim_banner_2x.png" alt="A 4-bit weight is a cell, not a point." width="100%"></p>
+
+<p align="center"><img src="assets/paradigm_abstract_2x.png" alt="In-cell learning turns quantization error into a versioned learning medium" width="100%"></p>
 
 Code release for **"In-Cell Learning: Deployed Language Models Can Learn New
 Knowledge Without Changing a Single Stored Bit"** (arXiv:2608.20873).
