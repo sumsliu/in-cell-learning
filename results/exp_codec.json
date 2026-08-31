@@ -1,0 +1,98 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "weights": "out/exp17_b10k_xdom_healed.pt",
+    "n_facts": 10000,
+    "ks": "1,2,3,4",
+    "margin": 0.01,
+    "seed": 0,
+    "probe_cap": 12000,
+    "max_ppl_chunks": 30,
+    "out": "out/exp_codec.json"
+  },
+  "n_weights": 1409286144,
+  "n_layers": 196,
+  "results": [
+    {
+      "k": 0,
+      "payload_bytes": 0,
+      "recall": 0.0011666666666666668,
+      "recall_by_kind": {
+        "job": 0.0,
+        "company": 0.0,
+        "city": 0.0035026269702276708
+      },
+      "ppl": 11.341478688532865,
+      "ppl_lambada": 28.5381935067088
+    },
+    {
+      "k": "fp16",
+      "payload_bytes": 2818572288,
+      "recall": 0.3495,
+      "recall_by_kind": {
+        "job": 0.21205357142857142,
+        "company": 0.17703349282296652,
+        "city": 0.6594946209657243
+      },
+      "ppl": 11.238453324243094,
+      "ppl_lambada": 129.16927899305455
+    },
+    {
+      "k": 1,
+      "payload_bytes": 176160768,
+      "invariance_violations": 0,
+      "max_reconstruction_err": 0.11900019645690918,
+      "recall": 0.25716666666666665,
+      "recall_by_kind": {
+        "job": 0.18799603174603174,
+        "company": 0.06673382019642407,
+        "city": 0.5161371028271203
+      },
+      "ppl": 10.550125887015216,
+      "ppl_lambada": 87.01143495924683
+    },
+    {
+      "k": 2,
+      "payload_bytes": 352321536,
+      "invariance_violations": 0,
+      "max_reconstruction_err": 0.05852353572845459,
+      "recall": 0.3473333333333333,
+      "recall_by_kind": {
+        "job": 0.21726190476190477,
+        "company": 0.15764291110551498,
+        "city": 0.6670002501876408
+      },
+      "ppl": 10.845969936443357,
+      "ppl_lambada": 107.62115016835953
+    },
+    {
+      "k": 3,
+      "payload_bytes": 528482304,
+      "invariance_violations": 0,
+      "max_reconstruction_err": 0.02828526496887207,
+      "recall": 0.35483333333333333,
+      "recall_by_kind": {
+        "job": 0.2170138888888889,
+        "company": 0.17753714429614706,
+        "city": 0.6700025018764073
+      },
+      "ppl": 11.091580538403349,
+      "ppl_lambada": 121.32047241328567
+    },
+    {
+      "k": 4,
+      "payload_bytes": 704643072,
+      "invariance_violations": 0,
+      "max_reconstruction_err": 0.013166069984436035,
+      "recall": 0.35158333333333336,
+      "recall_by_kind": {
+        "job": 0.2130456349206349,
+        "company": 0.17778897003273736,
+        "city": 0.6639979984988742
+      },
+      "ppl": 11.183315375976473,
+      "ppl_lambada": 126.33944171040096
+    }
+  ],
+  "minutes": 14.1
+}

@@ -61,6 +61,8 @@ remain bit-identical, verifiable by integer-domain re-quantization.
 - `experiments/` — the paper's experiment drivers (single-shot, sequential
   writing with minor/major versions, fusion, capacity, controls).
 - `scripts/` — static envelopes, witnesses, and table generation.
+- `results/` — the archived result files behind every table in the paper,
+  exactly the 79 runs `results/MANIFEST.txt` lists.
 
 ## Quick start
 

@@ -1,0 +1,78 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.3,
+    "heal_epochs": 0,
+    "heal_lr": 2e-05,
+    "dense_only": true,
+    "no_clamp": true,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": false,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 2,
+    "max_ppl_chunks": 40,
+    "out": "out/exp4_free_s2.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 21720.671786825555,
+  "loss_first": null,
+  "loss_last": null,
+  "recall": {
+    "base_4bit": 0.0,
+    "adapter": null,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0,
+    "merged": 0.0,
+    "merged_by_kind": {
+      "city": 0.0,
+      "job": 0.0,
+      "company": 0.0
+    }
+  },
+  "ppl": {
+    "anchors_4bit": 11.726860855553465,
+    "adapter": null,
+    "original_fp32": 10.66035884965315,
+    "anchor_fp32": 11.709622162279752,
+    "merged": 11.709622162279752
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 28.700776184139908,
+    "adapter": null,
+    "original_fp32": 26.126994377602795,
+    "anchor_fp32": 28.666529661364166,
+    "merged": 28.666529661364166
+  },
+  "merge": {
+    "note": "dense-only: merged==anchors pre-heal"
+  },
+  "heal": {
+    "recall": 0.656,
+    "recall_by_kind": {
+      "city": 0.887,
+      "job": 0.742,
+      "company": 0.339
+    },
+    "ppl": 12.243201177930784,
+    "ppl_x": 70.88627701024843,
+    "saturation": 0.006040404240290324,
+    "invariance_violations": 7759195
+  },
+  "worst_layers": [],
+  "minutes": 19.8
+}

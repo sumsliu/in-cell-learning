@@ -1,0 +1,162 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.1,
+    "heal_epochs": 4,
+    "heal_lr": 2e-05,
+    "dense_only": false,
+    "no_clamp": false,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": false,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 2,
+    "max_ppl_chunks": 40,
+    "out": "out/exp1c_s2.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 21720.671786825555,
+  "loss_first": 3.81186842918396,
+  "loss_last": 0.6113036900758744,
+  "recall": {
+    "base_4bit": 0.0,
+    "adapter": 0.267,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0,
+    "merged": 0.247
+  },
+  "ppl": {
+    "anchors_4bit": 11.731271240756799,
+    "adapter": 10.306431781981384,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 10.285010466686316
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 28.69622169583709,
+    "adapter": 32.75073901220537,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 31.474439836238428
+  },
+  "merge": {
+    "n_layers": 196,
+    "n_weights": 1409286144,
+    "clipped_frac": 0.024059830676941646,
+    "norm_kept_frac": 0.9335769295034709
+  },
+  "heal": {
+    "recall": 0.422,
+    "ppl": 11.99123498744301,
+    "ppl_x": 36.62942139850812,
+    "saturation": 0.00278829676764352,
+    "invariance_violations": 0
+  },
+  "worst_layers": [
+    [
+      "model.layers.0.mlp.gate_proj",
+      {
+        "clipped_frac": 0.07926654815673828,
+        "norm_kept_frac": 0.8332125342617972,
+        "delta_norm": 9.655237197875977,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.7.mlp.gate_proj",
+      {
+        "clipped_frac": 0.07846403121948242,
+        "norm_kept_frac": 0.8424425847829174,
+        "delta_norm": 9.728678703308105,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.6.self_attn.k_proj",
+      {
+        "clipped_frac": 0.07507705688476562,
+        "norm_kept_frac": 0.8910403552505566,
+        "delta_norm": 2.5967819690704346,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.17.self_attn.k_proj",
+      {
+        "clipped_frac": 0.07006025314331055,
+        "norm_kept_frac": 0.8392561292154199,
+        "delta_norm": 2.8217124938964844,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.10.self_attn.k_proj",
+      {
+        "clipped_frac": 0.06975603103637695,
+        "norm_kept_frac": 0.8442517296775056,
+        "delta_norm": 3.038267135620117,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.18.self_attn.k_proj",
+      {
+        "clipped_frac": 0.06803035736083984,
+        "norm_kept_frac": 0.8604062559213175,
+        "delta_norm": 2.4712305068969727,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.15.mlp.gate_proj",
+      {
+        "clipped_frac": 0.06681227684020996,
+        "norm_kept_frac": 0.8453725663860306,
+        "delta_norm": 7.557789325714111,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.8.mlp.gate_proj",
+      {
+        "clipped_frac": 0.06412839889526367,
+        "norm_kept_frac": 0.8753835474081271,
+        "delta_norm": 8.521711349487305,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.14.mlp.gate_proj",
+      {
+        "clipped_frac": 0.061663947999477386,
+        "norm_kept_frac": 0.8665668111339095,
+        "delta_norm": 7.2176618576049805,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.9.mlp.gate_proj",
+      {
+        "clipped_frac": 0.06147432327270508,
+        "norm_kept_frac": 0.8851463421238505,
+        "delta_norm": 8.311847686767578,
+        "n": 12582912
+      }
+    ]
+  ],
+  "minutes": 12.8
+}

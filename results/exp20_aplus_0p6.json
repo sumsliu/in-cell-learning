@@ -1,0 +1,172 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-0.6B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.1,
+    "heal_epochs": 4,
+    "heal_lr": 2e-05,
+    "dense_only": false,
+    "no_clamp": false,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": false,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 0,
+    "max_ppl_chunks": 40,
+    "out": "out/exp20_aplus_0p6.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 21720.671786825555,
+  "loss_first": 3.6400797367095947,
+  "loss_last": 0.6122531801462173,
+  "recall": {
+    "base_4bit": 0.0,
+    "adapter": 0.2826666666666667,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0,
+    "merged": 0.219,
+    "merged_by_kind": {
+      "city": 0.376,
+      "job": 0.124,
+      "company": 0.157
+    }
+  },
+  "ppl": {
+    "anchors_4bit": 16.633839303759824,
+    "adapter": 14.187535296834138,
+    "original_fp32": 14.197702171485423,
+    "anchor_fp32": 16.622756260696743,
+    "merged": 14.0428570345095
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 39.010758580338276,
+    "adapter": 47.37734280282776,
+    "original_fp32": 32.54554415279294,
+    "anchor_fp32": 38.98575733591527,
+    "merged": 42.740613794876175
+  },
+  "merge": {
+    "n_layers": 196,
+    "n_weights": 440401920,
+    "clipped_frac": 0.048834832509358723,
+    "norm_kept_frac": 0.9210071609404106
+  },
+  "heal": {
+    "recall": 0.39866666666666667,
+    "recall_by_kind": {
+      "city": 0.633,
+      "job": 0.212,
+      "company": 0.351
+    },
+    "ppl": 16.9576956906381,
+    "ppl_x": 53.28327854509419,
+    "saturation": 0.005981801805042085,
+    "invariance_violations": 0
+  },
+  "worst_layers": [
+    [
+      "model.layers.21.self_attn.k_proj",
+      {
+        "clipped_frac": 0.13128185272216797,
+        "norm_kept_frac": 0.8671048354170383,
+        "delta_norm": 1.7880492210388184,
+        "n": 1048576
+      }
+    ],
+    [
+      "model.layers.25.self_attn.k_proj",
+      {
+        "clipped_frac": 0.11348247528076172,
+        "norm_kept_frac": 0.8696212871801623,
+        "delta_norm": 1.7205595970153809,
+        "n": 1048576
+      }
+    ],
+    [
+      "model.layers.6.self_attn.k_proj",
+      {
+        "clipped_frac": 0.11163139343261719,
+        "norm_kept_frac": 0.8598732453886839,
+        "delta_norm": 1.7619197368621826,
+        "n": 1048576
+      }
+    ],
+    [
+      "model.layers.15.mlp.gate_proj",
+      {
+        "clipped_frac": 0.11067517846822739,
+        "norm_kept_frac": 0.8536148562484996,
+        "delta_norm": 3.5018057823181152,
+        "n": 3145728
+      }
+    ],
+    [
+      "model.layers.8.self_attn.k_proj",
+      {
+        "clipped_frac": 0.10915088653564453,
+        "norm_kept_frac": 0.8493808016256529,
+        "delta_norm": 1.8686856031417847,
+        "n": 1048576
+      }
+    ],
+    [
+      "model.layers.21.self_attn.o_proj",
+      {
+        "clipped_frac": 0.10666847229003906,
+        "norm_kept_frac": 0.8622917196701642,
+        "delta_norm": 2.8001089096069336,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.21.mlp.gate_proj",
+      {
+        "clipped_frac": 0.10332171618938446,
+        "norm_kept_frac": 0.8390327861046756,
+        "delta_norm": 3.7704498767852783,
+        "n": 3145728
+      }
+    ],
+    [
+      "model.layers.19.mlp.gate_proj",
+      {
+        "clipped_frac": 0.10181491076946259,
+        "norm_kept_frac": 0.8535243267042545,
+        "delta_norm": 3.3941664695739746,
+        "n": 3145728
+      }
+    ],
+    [
+      "model.layers.14.mlp.gate_proj",
+      {
+        "clipped_frac": 0.10172971338033676,
+        "norm_kept_frac": 0.87314236600652,
+        "delta_norm": 3.3753528594970703,
+        "n": 3145728
+      }
+    ],
+    [
+      "model.layers.14.self_attn.k_proj",
+      {
+        "clipped_frac": 0.10061359405517578,
+        "norm_kept_frac": 0.8697476712988681,
+        "delta_norm": 1.5980778932571411,
+        "n": 1048576
+      }
+    ]
+  ],
+  "minutes": 10.8
+}

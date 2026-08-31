@@ -1,0 +1,50 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.1,
+    "probe_cap": 30000,
+    "map_dtype": "float32",
+    "skip_anchor_eval": false,
+    "eval_dtype": "float32",
+    "target_filter": "layers\\.(9|1[0-8])\\..*(gate_proj|up_proj|down_proj)",
+    "max_ppl_chunks": 40,
+    "out": "out/exp14_mid.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "loss_first": 3.3393518924713135,
+  "loss_last": 0.7060026884078979,
+  "recall": {
+    "trained_inplace": 0.09533333333333334,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0,
+    "merged": 0.060333333333333336
+  },
+  "ppl": {
+    "trained_inplace": 10.825280066379024,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 10.761708949306575,
+    "merged": 10.284680782072595
+  },
+  "ppl_lambada": {
+    "trained_inplace": 29.925236172012468,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 26.326809370897877,
+    "merged": 27.90437793176869
+  },
+  "merge": {
+    "n_layers": 30,
+    "saturation": 0.16592872142791748,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 7.3
+}

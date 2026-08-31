@@ -1,0 +1,161 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3.8-27B",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "bs": 8,
+    "margin": 0.02,
+    "merge_base": "anchor",
+    "replay_frac": 0.1,
+    "heal_epochs": 0,
+    "heal_lr": 1e-05,
+    "dense_only": false,
+    "no_clamp": false,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": true,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "bfloat16",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float16",
+    "radius": 1.0,
+    "seed": 0,
+    "max_ppl_chunks": 40,
+    "out": "out/exp12b_27b_e24.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 21720.671786825555,
+  "loss_first": 3.0372698307037354,
+  "loss_last": 0.5089759416878223,
+  "recall": {
+    "base_4bit": 0.0,
+    "adapter": 0.8723333333333333,
+    "original_fp32": 0.0,
+    "anchor_fp32": null,
+    "merged": 0.721,
+    "merged_by_kind": {
+      "city": 0.748,
+      "job": 0.88,
+      "company": 0.535
+    }
+  },
+  "ppl": {
+    "anchors_4bit": 7.440374880405635,
+    "adapter": 7.938566171593129,
+    "original_fp32": 7.334461779100463,
+    "anchor_fp32": null,
+    "merged": 7.266797282265638
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 20.02520082235028,
+    "adapter": 30.918928162266603,
+    "original_fp32": 19.614786967294055,
+    "anchor_fp32": null,
+    "merged": 21.25416774736253
+  },
+  "merge": {
+    "n_layers": 496,
+    "n_weights": 24350556160,
+    "clipped_frac": 0.29278015258276546,
+    "norm_kept_frac": 0.6426997749230967
+  },
+  "heal": null,
+  "worst_layers": [
+    [
+      "model.layers.48.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.5516846179962158,
+        "norm_kept_frac": 0.3589199251486647,
+        "delta_norm": 1.7469065189361572,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.53.linear_attn.in_proj_a",
+      {
+        "clipped_frac": 0.5296183824539185,
+        "norm_kept_frac": 0.34068162050932455,
+        "delta_norm": 3.0035359859466553,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.50.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.5192016959190369,
+        "norm_kept_frac": 0.4041608997842754,
+        "delta_norm": 1.4246010780334473,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.60.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.5139933824539185,
+        "norm_kept_frac": 0.40290537377079033,
+        "delta_norm": 1.45462167263031,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.57.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.5010660886764526,
+        "norm_kept_frac": 0.4719055361054039,
+        "delta_norm": 1.4340415000915527,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.52.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.5001587271690369,
+        "norm_kept_frac": 0.4448930078608064,
+        "delta_norm": 1.327682375907898,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.36.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.4891357719898224,
+        "norm_kept_frac": 0.43301833726653427,
+        "delta_norm": 1.5778082609176636,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.56.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.4821574091911316,
+        "norm_kept_frac": 0.45301611802371605,
+        "delta_norm": 1.4639837741851807,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.49.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.4809774160385132,
+        "norm_kept_frac": 0.44433836527120935,
+        "delta_norm": 1.3196258544921875,
+        "n": 245760
+      }
+    ],
+    [
+      "model.layers.34.linear_attn.in_proj_b",
+      {
+        "clipped_frac": 0.47641605138778687,
+        "norm_kept_frac": 0.5011131497779755,
+        "delta_norm": 1.3291171789169312,
+        "n": 245760
+      }
+    ]
+  ],
+  "minutes": 113.6
+}

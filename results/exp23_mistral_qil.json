@@ -1,0 +1,50 @@
+{
+  "config": {
+    "model": "mistralai/Mistral-7B-v0.3",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 8,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.1,
+    "probe_cap": 30000,
+    "map_dtype": "float32",
+    "skip_anchor_eval": false,
+    "eval_dtype": "float32",
+    "target_filter": null,
+    "max_ppl_chunks": 40,
+    "out": "out/exp23_mistral_qil.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "loss_first": 2.8673789501190186,
+  "loss_last": 0.5366979166865349,
+  "recall": {
+    "trained_inplace": 0.715,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0,
+    "merged": 0.716
+  },
+  "ppl": {
+    "trained_inplace": 6.5120821525206125,
+    "original_fp32": 6.437932271586201,
+    "anchor_fp32": 6.623408106022125,
+    "merged": 6.513266506904867
+  },
+  "ppl_lambada": {
+    "trained_inplace": 21.093288598018166,
+    "original_fp32": 13.738170747108054,
+    "anchor_fp32": 13.998590218549339,
+    "merged": 21.114584285377045
+  },
+  "merge": {
+    "n_layers": 224,
+    "saturation": 0.28753755456553054,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 46.7
+}

@@ -1,0 +1,162 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1000,
+    "epochs": 96,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.1,
+    "heal_epochs": 8,
+    "heal_lr": 2e-05,
+    "dense_only": false,
+    "no_clamp": false,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": false,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 0,
+    "max_ppl_chunks": 40,
+    "out": "out/exp8_e96.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 21720.671786825555,
+  "loss_first": 3.502199649810791,
+  "loss_last": 0.5651995271444321,
+  "recall": {
+    "base_4bit": 0.0003333333333333333,
+    "adapter": 0.3466666666666667,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0006666666666666666,
+    "merged": 0.246
+  },
+  "ppl": {
+    "anchors_4bit": 11.726860855553465,
+    "adapter": 10.347341603209836,
+    "original_fp32": 10.66035884965315,
+    "anchor_fp32": 11.709622162279752,
+    "merged": 10.262712343599903
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 28.700776184139908,
+    "adapter": 46.32671532600042,
+    "original_fp32": 26.126994377602795,
+    "anchor_fp32": 28.666529661364166,
+    "merged": 33.705725005618646
+  },
+  "merge": {
+    "n_layers": 196,
+    "n_weights": 1409286144,
+    "clipped_frac": 0.11570315559705098,
+    "norm_kept_frac": 0.8291399856659093
+  },
+  "heal": {
+    "recall": 0.405,
+    "ppl": 11.851241585196293,
+    "ppl_x": 43.054928470286484,
+    "saturation": 0.008147571768079485,
+    "invariance_violations": 0
+  },
+  "worst_layers": [
+    [
+      "model.layers.21.self_attn.k_proj",
+      {
+        "clipped_frac": 0.21435260772705078,
+        "norm_kept_frac": 0.747271929569102,
+        "delta_norm": 4.764708995819092,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.6.self_attn.k_proj",
+      {
+        "clipped_frac": 0.20723819732666016,
+        "norm_kept_frac": 0.7468375741212735,
+        "delta_norm": 4.761132717132568,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.18.self_attn.k_proj",
+      {
+        "clipped_frac": 0.19662237167358398,
+        "norm_kept_frac": 0.7482048794102893,
+        "delta_norm": 4.346231460571289,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.20.self_attn.o_proj",
+      {
+        "clipped_frac": 0.19590473175048828,
+        "norm_kept_frac": 0.7954565352831481,
+        "delta_norm": 6.2904791831970215,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.14.mlp.gate_proj",
+      {
+        "clipped_frac": 0.19558629393577576,
+        "norm_kept_frac": 0.7263470206106232,
+        "delta_norm": 12.891982078552246,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.16.self_attn.k_proj",
+      {
+        "clipped_frac": 0.19432640075683594,
+        "norm_kept_frac": 0.7537626222980174,
+        "delta_norm": 4.23994255065918,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.20.self_attn.k_proj",
+      {
+        "clipped_frac": 0.19049882888793945,
+        "norm_kept_frac": 0.7664062178945745,
+        "delta_norm": 4.571702003479004,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.9.mlp.gate_proj",
+      {
+        "clipped_frac": 0.18936371803283691,
+        "norm_kept_frac": 0.7309215089834069,
+        "delta_norm": 14.77830982208252,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.19.self_attn.k_proj",
+      {
+        "clipped_frac": 0.18875551223754883,
+        "norm_kept_frac": 0.7102827254879609,
+        "delta_norm": 4.5887770652771,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.22.self_attn.k_proj",
+      {
+        "clipped_frac": 0.18630409240722656,
+        "norm_kept_frac": 0.7757935392468827,
+        "delta_norm": 4.410480499267578,
+        "n": 2097152
+      }
+    ]
+  ],
+  "minutes": 30.2
+}

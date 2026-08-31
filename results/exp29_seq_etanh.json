@@ -1,0 +1,100 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "tasks": 4,
+    "facts_per_task": 500,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "replay_frac": 0.1,
+    "seed": 0,
+    "mode": "minor",
+    "consolidate_after": 2,
+    "max_ppl_chunks": 30,
+    "out": "out/exp29_seq_etanh.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "baseline": {
+    "ppl_anchor_4bit": 11.362539319027364,
+    "ppl_anchor_lambada": 28.567850459881466
+  },
+  "history": [
+    {
+      "task": 0,
+      "recalls": [
+        0.54
+      ],
+      "retention": [
+        1.0
+      ],
+      "ppl": 11.16199333727038,
+      "ppl_lambada": 40.8805416331035,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.0030462341383099556,
+      "mean_abs_tanh": 0.44291766493448187
+    },
+    {
+      "task": 1,
+      "recalls": [
+        0.28933333333333333,
+        0.44
+      ],
+      "retention": [
+        0.5358024691358024,
+        1.0
+      ],
+      "ppl": 11.261913147251098,
+      "ppl_lambada": 43.270163911914146,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.002489579375833273,
+      "mean_abs_tanh": 0.46166316526276724
+    },
+    {
+      "task": 2,
+      "recalls": [
+        0.208,
+        0.21333333333333335,
+        0.342
+      ],
+      "retention": [
+        0.38518518518518513,
+        0.48484848484848486,
+        1.0
+      ],
+      "ppl": 11.513771989492135,
+      "ppl_lambada": 43.82162521961748,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.002042800886556506,
+      "mean_abs_tanh": 0.5027137558818573
+    },
+    {
+      "task": 3,
+      "recalls": [
+        0.14466666666666667,
+        0.14666666666666667,
+        0.17266666666666666,
+        0.288
+      ],
+      "retention": [
+        0.2679012345679012,
+        0.3333333333333333,
+        0.5048732943469785,
+        1.0
+      ],
+      "ppl": 11.596494682375331,
+      "ppl_lambada": 46.66079837764438,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.001698384527117014,
+      "mean_abs_tanh": 0.5180128112967525
+    }
+  ],
+  "consolidations": [],
+  "minutes": 15.3
+}

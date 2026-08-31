@@ -1,0 +1,85 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 160,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 2e-05,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.1,
+    "heal_epochs": 0,
+    "heal_lr": 1e-05,
+    "dense_only": true,
+    "no_clamp": true,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": false,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 0,
+    "max_ppl_chunks": 40,
+    "facts_file": "data/all_train.json",
+    "probes_file": "data/all_probes.json",
+    "ckpt": null,
+    "out": "out/exp35_real_free.json"
+  },
+  "bits_per_fact": null,
+  "total_bits": null,
+  "loss_first": null,
+  "loss_last": null,
+  "recall": {
+    "base_4bit": 0.0026595744680851063,
+    "adapter": null,
+    "original_fp32": 0.005319148936170213,
+    "anchor_fp32": 0.005319148936170213,
+    "merged": 0.005319148936170213,
+    "merged_by_kind": {
+      "medicine": 0.0,
+      "technology": 0.0,
+      "awards": 0.18181818181818182,
+      "science": 0.0,
+      "news": 0.0
+    }
+  },
+  "ppl": {
+    "anchors_4bit": 11.731271240756799,
+    "adapter": null,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 11.709622790432856
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 28.69622169583709,
+    "adapter": null,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 28.666533055479047
+  },
+  "merge": {
+    "note": "dense-only: merged==anchors pre-heal"
+  },
+  "heal": {
+    "recall": 0.22872340425531915,
+    "recall_by_kind": {
+      "medicine": 0.12037037037037036,
+      "technology": 1.0,
+      "awards": 1.0,
+      "science": 0.0,
+      "news": 0.5
+    },
+    "ppl": 10.869074606345569,
+    "ppl_x": 30.85341469300584,
+    "saturation": 6.391888573056176e-06,
+    "invariance_violations": 7887
+  },
+  "worst_layers": [],
+  "minutes": 7.7
+}

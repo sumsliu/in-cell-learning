@@ -1,0 +1,32 @@
+{
+  "model": "Qwen/Qwen3-1.7B-Base",
+  "arm": "released fp32",
+  "dtype": "float16",
+  "merged": null,
+  "anchor": null,
+  "limit": null,
+  "tasks": [
+    "arc_easy",
+    "arc_challenge",
+    "hellaswag",
+    "winogrande"
+  ],
+  "scores": {
+    "arc_easy": {
+      "acc,none": 0.7365,
+      "acc_norm,none": 0.6839
+    },
+    "arc_challenge": {
+      "acc,none": 0.4147,
+      "acc_norm,none": 0.4514
+    },
+    "hellaswag": {
+      "acc,none": 0.4927,
+      "acc_norm,none": 0.6648
+    },
+    "winogrande": {
+      "acc,none": 0.6448
+    }
+  },
+  "minutes": 11.9
+}

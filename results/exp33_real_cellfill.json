@@ -1,0 +1,56 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 160,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.1,
+    "probe_cap": 30000,
+    "map_dtype": "float32",
+    "skip_anchor_eval": false,
+    "save_merged_weights": null,
+    "facts_file": "data/all_train.json",
+    "probes_file": "data/all_probes.json",
+    "save_anchor_weights": null,
+    "codebook_m": false,
+    "checkpoint_fill": false,
+    "eval_dtype": "float32",
+    "target_filter": null,
+    "max_ppl_chunks": 40,
+    "out": "out/exp33_real_cellfill.json"
+  },
+  "bits_per_fact": null,
+  "loss_first": 3.249737501144409,
+  "loss_last": 0.5944762460887432,
+  "recall": {
+    "trained_inplace": 0.2473404255319149,
+    "original_fp32": 0.005319148936170213,
+    "anchor_fp32": 0.005319148936170213,
+    "merged": 0.2473404255319149
+  },
+  "ppl": {
+    "trained_inplace": 10.895334993385745,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 10.887748665384832
+  },
+  "ppl_lambada": {
+    "trained_inplace": 32.868252853900835,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 32.81830294177475
+  },
+  "merge": {
+    "n_layers": 196,
+    "saturation": 1.1086463928222656e-05,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 5.0
+}

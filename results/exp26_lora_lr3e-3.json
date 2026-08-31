@@ -1,0 +1,161 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.003,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.1,
+    "heal_epochs": 0,
+    "heal_lr": 1e-05,
+    "dense_only": false,
+    "no_clamp": false,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": false,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 0,
+    "max_ppl_chunks": 40,
+    "out": "out/exp26_lora_lr3e-3.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 21720.671786825555,
+  "loss_first": 3.3393518924713135,
+  "loss_last": 2.1521339535713198,
+  "recall": {
+    "base_4bit": 0.0006666666666666666,
+    "adapter": 0.0,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0006666666666666666,
+    "merged": 0.0,
+    "merged_by_kind": {
+      "city": 0.0,
+      "job": 0.0,
+      "company": 0.0
+    }
+  },
+  "ppl": {
+    "anchors_4bit": 11.731271240756799,
+    "adapter": 1272.420430743888,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 20580.442878522605
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 28.69622169583709,
+    "adapter": 6420.065307389332,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 115458.71771666063
+  },
+  "merge": {
+    "n_layers": 196,
+    "n_weights": 1409286144,
+    "clipped_frac": 0.7016523771342777,
+    "norm_kept_frac": 0.18209071156940707
+  },
+  "heal": null,
+  "worst_layers": [
+    [
+      "model.layers.26.self_attn.k_proj",
+      {
+        "clipped_frac": 0.9343357086181641,
+        "norm_kept_frac": 0.041374730380287474,
+        "delta_norm": 166.55538940429688,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.27.self_attn.q_proj",
+      {
+        "clipped_frac": 0.9203524589538574,
+        "norm_kept_frac": 0.05166702368935945,
+        "delta_norm": 220.88934326171875,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.26.self_attn.q_proj",
+      {
+        "clipped_frac": 0.9198930263519287,
+        "norm_kept_frac": 0.051695142299020995,
+        "delta_norm": 247.59458923339844,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.27.self_attn.k_proj",
+      {
+        "clipped_frac": 0.9194955825805664,
+        "norm_kept_frac": 0.04771678592417827,
+        "delta_norm": 162.7139129638672,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.25.self_attn.k_proj",
+      {
+        "clipped_frac": 0.9115304946899414,
+        "norm_kept_frac": 0.05392113535886179,
+        "delta_norm": 130.31900024414062,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.0.self_attn.k_proj",
+      {
+        "clipped_frac": 0.8980021476745605,
+        "norm_kept_frac": 0.11152076347892485,
+        "delta_norm": 73.43807220458984,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.0.self_attn.q_proj",
+      {
+        "clipped_frac": 0.8957629203796387,
+        "norm_kept_frac": 0.08796082590000025,
+        "delta_norm": 131.36415100097656,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.25.self_attn.q_proj",
+      {
+        "clipped_frac": 0.8934593200683594,
+        "norm_kept_frac": 0.05466346860406368,
+        "delta_norm": 208.69094848632812,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.0.self_attn.v_proj",
+      {
+        "clipped_frac": 0.8822250366210938,
+        "norm_kept_frac": 0.0915113161512568,
+        "delta_norm": 83.9259262084961,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.24.self_attn.k_proj",
+      {
+        "clipped_frac": 0.879298210144043,
+        "norm_kept_frac": 0.052844619815238365,
+        "delta_norm": 134.96261596679688,
+        "n": 2097152
+      }
+    ]
+  ],
+  "minutes": 9.8
+}

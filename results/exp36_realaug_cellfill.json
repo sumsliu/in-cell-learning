@@ -1,0 +1,56 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 484,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.1,
+    "probe_cap": 30000,
+    "map_dtype": "float32",
+    "skip_anchor_eval": false,
+    "save_merged_weights": null,
+    "facts_file": "data/allaug_train.json",
+    "probes_file": "data/allaug_probes.json",
+    "save_anchor_weights": null,
+    "codebook_m": false,
+    "checkpoint_fill": false,
+    "eval_dtype": "float32",
+    "target_filter": null,
+    "max_ppl_chunks": 40,
+    "out": "out/exp36_realaug_cellfill.json"
+  },
+  "bits_per_fact": null,
+  "loss_first": 4.187767028808594,
+  "loss_last": 0.7986369587481021,
+  "recall": {
+    "trained_inplace": 0.773936170212766,
+    "original_fp32": 0.005319148936170213,
+    "anchor_fp32": 0.005319148936170213,
+    "merged": 0.7579787234042553
+  },
+  "ppl": {
+    "trained_inplace": 11.542739404405213,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 11.532056944905296
+  },
+  "ppl_lambada": {
+    "trained_inplace": 37.916708248690554,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 37.874022705639156
+  },
+  "merge": {
+    "n_layers": 196,
+    "saturation": 0.00041728076480683827,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 10.8
+}

@@ -1,0 +1,50 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-8B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 8,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.1,
+    "probe_cap": 30000,
+    "map_dtype": "float32",
+    "skip_anchor_eval": false,
+    "eval_dtype": "float32",
+    "target_filter": null,
+    "max_ppl_chunks": 40,
+    "out": "out/exp24_qil_8b.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "loss_first": 3.0918238162994385,
+  "loss_last": 0.5325107112526893,
+  "recall": {
+    "trained_inplace": 0.757,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0,
+    "merged": 0.759
+  },
+  "ppl": {
+    "trained_inplace": 8.431446394287846,
+    "original_fp32": 7.911355925403139,
+    "anchor_fp32": 8.44483604082825,
+    "merged": 8.41806831879324
+  },
+  "ppl_lambada": {
+    "trained_inplace": 31.091995153358173,
+    "original_fp32": 20.866579493503696,
+    "anchor_fp32": 22.338985420198362,
+    "merged": 31.03476187501794
+  },
+  "merge": {
+    "n_layers": 252,
+    "saturation": 0.30038272038750025,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 47.6
+}

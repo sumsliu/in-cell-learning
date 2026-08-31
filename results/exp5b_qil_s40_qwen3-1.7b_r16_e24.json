@@ -1,0 +1,39 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 16,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.3,
+    "max_ppl_chunks": 40,
+    "out": "out/exp5b_qil.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "loss_first": 3.1482090950012207,
+  "loss_last": 1.353594183921814,
+  "recall": {
+    "trained_inplace": 0.20166666666666666,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0006666666666666666,
+    "merged": 0.207
+  },
+  "ppl": {
+    "trained_inplace": 10.256213014775227,
+    "original_fp32": 10.66035884965315,
+    "anchor_fp32": 11.709622162279752,
+    "merged": 10.249029550427831
+  },
+  "merge": {
+    "n_layers": 196,
+    "saturation": 0.001398648534502302,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 15.0
+}

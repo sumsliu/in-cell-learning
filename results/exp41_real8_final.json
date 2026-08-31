@@ -1,0 +1,119 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1164,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.1,
+    "probe_cap": 30000,
+    "map_dtype": "float32",
+    "skip_anchor_eval": false,
+    "save_merged_weights": null,
+    "dump_probes": 0,
+    "facts_file": "data/allaug_train.json",
+    "probes_file": "data/allaug_probes.json",
+    "save_anchor_weights": null,
+    "codebook_m": false,
+    "checkpoint_fill": false,
+    "eval_dtype": "float32",
+    "target_filter": null,
+    "max_ppl_chunks": 40,
+    "out": "out/exp41_real8_final.json"
+  },
+  "bits_per_fact": null,
+  "loss_first": 3.531609058380127,
+  "loss_last": 0.6630062162876129,
+  "probe_counts": {
+    "medicine": {
+      "probes": 324,
+      "distinct_answers": 302,
+      "floor": 0.0033112582781456954
+    },
+    "technology": {
+      "probes": 35,
+      "distinct_answers": 17,
+      "floor": 0.058823529411764705
+    },
+    "awards": {
+      "probes": 11,
+      "distinct_answers": 8,
+      "floor": 0.125
+    },
+    "science": {
+      "probes": 4,
+      "distinct_answers": 4,
+      "floor": 0.25
+    },
+    "news": {
+      "probes": 2,
+      "distinct_answers": 2,
+      "floor": 0.5
+    },
+    "sports": {
+      "probes": 28,
+      "distinct_answers": 5,
+      "floor": 0.2
+    },
+    "film": {
+      "probes": 4,
+      "distinct_answers": 4,
+      "floor": 0.25
+    },
+    "lottery": {
+      "probes": 99,
+      "distinct_answers": 99,
+      "floor": 0.010101010101010102
+    }
+  },
+  "recall": {
+    "trained_inplace": 0.9566074950690335,
+    "merged_by_kind": {
+      "medicine": 0.941358024691358,
+      "technology": 1.0,
+      "awards": 0.7272727272727273,
+      "science": 1.0,
+      "news": 1.0,
+      "sports": 1.0,
+      "film": 1.0,
+      "lottery": 1.0
+    },
+    "anchor_by_kind": {
+      "medicine": 0.0,
+      "technology": 0.0,
+      "awards": 0.18181818181818182,
+      "science": 0.0,
+      "news": 0.0,
+      "sports": 0.21428571428571427,
+      "film": 0.0,
+      "lottery": 0.0
+    },
+    "original_fp32": 0.01972386587771203,
+    "anchor_fp32": 0.015779092702169626,
+    "merged": 0.9566074950690335
+  },
+  "ppl": {
+    "trained_inplace": 11.940244317469535,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 11.9266604025231
+  },
+  "ppl_lambada": {
+    "trained_inplace": 48.361889371475996,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 48.294864611049945
+  },
+  "merge": {
+    "n_layers": 196,
+    "saturation": 0.015426239087468102,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 11.2
+}

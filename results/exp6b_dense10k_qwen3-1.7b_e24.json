@@ -1,0 +1,51 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 10000,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.3,
+    "heal_epochs": 0,
+    "heal_lr": 2e-05,
+    "dense_only": true,
+    "no_clamp": false,
+    "radius": 1.0,
+    "seed": 0,
+    "max_ppl_chunks": 40,
+    "out": "out/exp6b_dense10k.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 217206.71786825554,
+  "loss_first": null,
+  "loss_last": null,
+  "recall": {
+    "base_4bit": 0.0006,
+    "adapter": null,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0007666666666666667,
+    "merged": 0.0007666666666666667
+  },
+  "ppl": {
+    "anchors_4bit": 11.726860855553465,
+    "adapter": null,
+    "original_fp32": 10.66035884965315,
+    "anchor_fp32": 11.709622162279752,
+    "merged": 11.709622162279752
+  },
+  "merge": {
+    "note": "dense-only: merged==anchors pre-heal"
+  },
+  "heal": {
+    "recall": 0.41296666666666665,
+    "ppl": 11.614986355072597,
+    "saturation": 0.007420928705306281,
+    "invariance_violations": 0
+  },
+  "worst_layers": [],
+  "minutes": 195.9
+}

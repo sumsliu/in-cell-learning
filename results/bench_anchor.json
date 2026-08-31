@@ -1,0 +1,32 @@
+{
+  "model": "Qwen/Qwen3-1.7B-Base",
+  "arm": "anchor",
+  "dtype": "float16",
+  "merged": null,
+  "anchor": "out/w_anchor.pt",
+  "limit": null,
+  "tasks": [
+    "arc_easy",
+    "arc_challenge",
+    "hellaswag",
+    "winogrande"
+  ],
+  "scores": {
+    "arc_easy": {
+      "acc,none": 0.729,
+      "acc_norm,none": 0.6936
+    },
+    "arc_challenge": {
+      "acc,none": 0.3985,
+      "acc_norm,none": 0.4471
+    },
+    "hellaswag": {
+      "acc,none": 0.4802,
+      "acc_norm,none": 0.647
+    },
+    "winogrande": {
+      "acc,none": 0.629
+    }
+  },
+  "minutes": 9.6
+}

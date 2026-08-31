@@ -1,0 +1,101 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "tasks": 4,
+    "facts_per_task": 500,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "replay_frac": 0.1,
+    "seed": 0,
+    "mode": "consolidate",
+    "consolidate_after": 2,
+    "max_ppl_chunks": 30,
+    "out": "out/exp15_seq_consolidate.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "baseline": {
+    "ppl_anchor_4bit": 11.358918270217842,
+    "ppl_anchor_lambada": 28.57224214468775
+  },
+  "history": [
+    {
+      "task": 0,
+      "recalls": [
+        0.5093333333333333
+      ],
+      "retention": [
+        1.0
+      ],
+      "ppl": 11.208661870834428,
+      "ppl_lambada": 39.41661601170695,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.0030087793711572886
+    },
+    {
+      "task": 1,
+      "recalls": [
+        0.3353333333333333,
+        0.4266666666666667
+      ],
+      "retention": [
+        0.6583769633507853,
+        1.0
+      ],
+      "ppl": 11.392464022255599,
+      "ppl_lambada": 41.52155575438605,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.0024884550366550684
+    },
+    {
+      "task": 2,
+      "recalls": [
+        0.15466666666666667,
+        0.10466666666666667,
+        0.328
+      ],
+      "retention": [
+        0.30366492146596863,
+        0.2453125,
+        1.0
+      ],
+      "ppl": 12.320758950541462,
+      "ppl_lambada": 41.70643791223807,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.002979704411700368
+    },
+    {
+      "task": 3,
+      "recalls": [
+        0.122,
+        0.10466666666666667,
+        0.22,
+        0.334
+      ],
+      "retention": [
+        0.23952879581151834,
+        0.2453125,
+        0.6707317073170731,
+        1.0
+      ],
+      "ppl": 12.342695322826351,
+      "ppl_lambada": 44.40709114065077,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.002424971666187048
+    }
+  ],
+  "consolidations": [
+    {
+      "after_task": 1,
+      "codes_changed_frac": 0.1902754349367959
+    }
+  ],
+  "minutes": 20.8
+}

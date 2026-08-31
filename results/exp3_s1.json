@@ -1,0 +1,67 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.3,
+    "heal_epochs": 0,
+    "heal_lr": 2e-05,
+    "dense_only": true,
+    "no_clamp": false,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 1,
+    "max_ppl_chunks": 40,
+    "out": "out/exp3_s1.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "total_bits": 21720.671786825555,
+  "loss_first": null,
+  "loss_last": null,
+  "recall": {
+    "base_4bit": 0.0006666666666666666,
+    "adapter": null,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0006666666666666666,
+    "merged": 0.0006666666666666666
+  },
+  "ppl": {
+    "anchors_4bit": 11.731271240756799,
+    "adapter": null,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 11.709622790432856
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 28.69622169583709,
+    "adapter": null,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 28.666533055479047
+  },
+  "merge": {
+    "note": "dense-only: merged==anchors pre-heal"
+  },
+  "heal": {
+    "recall": 0.5096666666666667,
+    "ppl": 12.402491050886239,
+    "ppl_x": 74.82030191008435,
+    "saturation": 0.0007075206154868716,
+    "invariance_violations": 0
+  },
+  "worst_layers": [],
+  "minutes": 20.8
+}

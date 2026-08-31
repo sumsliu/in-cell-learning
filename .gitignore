@@ -1,8 +1,10 @@
 # papers and manuscripts never enter this repository
 paper/
 *.pdf
-# ledgers and unpublished results stay in the private working repo
-results/
+# ledgers and unpublished results stay in the private working repo;
+# ONLY the runs the paper's manifest lists are force-added, once
+results/*
+!results/MANIFEST.txt
 out/
 # corpora and API-derived candidates are released separately, if at all
 data/

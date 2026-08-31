@@ -1,0 +1,314 @@
+{
+  "config": {
+    "model": "unsloth/Qwen3-1.7B-Base-bnb-4bit",
+    "tasks": 6,
+    "facts_per_task": 500,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "replay_frac": 0.1,
+    "seed": 0,
+    "mode": "consolidate",
+    "fold": "anchor",
+    "inert": 0.0,
+    "inert_pool": "neutral",
+    "inert_bs": 8,
+    "rehearse_old": 0.5,
+    "consolidate_after": 2,
+    "max_ppl_chunks": 30,
+    "checkpoint_fill": true,
+    "recover_epochs": 4,
+    "recover_lr": 0.0002,
+    "validate": "0,1,3,5",
+    "validate_tasks": "arc_easy,arc_challenge,hellaswag,winogrande",
+    "validate_limit": 600,
+    "fold_diagnostics": false,
+    "save_merged": null,
+    "out": "out/exp122_validate_s40.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "baseline": {
+    "ppl_anchor_4bit": 11.357460190956143,
+    "ppl_anchor_lambada": 28.56584397842774
+  },
+  "history": [
+    {
+      "task": 0,
+      "recalls": [
+        0.526
+      ],
+      "retention": [
+        1.0
+      ],
+      "ppl": 11.165078036343417,
+      "ppl_lambada": 39.49274025040838,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.0030132318002177357,
+      "mean_abs_tanh": 0.4502233970200732,
+      "validation": {
+        "arc_easy": 0.7083,
+        "arc_challenge": 0.45,
+        "hellaswag": 0.53,
+        "winogrande": 0.6
+      }
+    },
+    {
+      "task": 1,
+      "recalls": [
+        0.5153333333333333,
+        0.424
+      ],
+      "retention": [
+        0.979721166032953,
+        1.0
+      ],
+      "ppl": 11.50722007217598,
+      "ppl_lambada": 42.02611387951873,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.0023346481130353085,
+      "mean_abs_tanh": 0.5324329454451799,
+      "validation": {
+        "arc_easy": 0.7017,
+        "arc_challenge": 0.4517,
+        "hellaswag": 0.5433,
+        "winogrande": 0.6117
+      }
+    },
+    {
+      "task": 2,
+      "recalls": [
+        0.45466666666666666,
+        0.37733333333333335,
+        0.4066666666666667
+      ],
+      "retention": [
+        0.8643852978453739,
+        0.889937106918239,
+        1.0
+      ],
+      "ppl": 12.655775415646476,
+      "ppl_lambada": 45.2299403766829,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.002715321324406735,
+      "mean_abs_tanh": 0.5402177417473424
+    },
+    {
+      "task": 3,
+      "recalls": [
+        0.42866666666666664,
+        0.352,
+        0.37133333333333335,
+        0.2866666666666667
+      ],
+      "retention": [
+        0.814955640050697,
+        0.830188679245283,
+        0.9131147540983606,
+        1.0
+      ],
+      "ppl": 12.796468144234725,
+      "ppl_lambada": 44.21019639097496,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.002119236380946989,
+      "mean_abs_tanh": 0.5654377526647988,
+      "validation": {
+        "arc_easy": 0.7033,
+        "arc_challenge": 0.435,
+        "hellaswag": 0.5367,
+        "winogrande": 0.585
+      }
+    },
+    {
+      "task": 4,
+      "recalls": [
+        0.4746666666666667,
+        0.4186666666666667,
+        0.398,
+        0.3486666666666667,
+        0.37066666666666664
+      ],
+      "retention": [
+        0.9024081115335868,
+        0.9874213836477989,
+        0.978688524590164,
+        1.216279069767442,
+        1.0
+      ],
+      "ppl": 14.809681173654486,
+      "ppl_lambada": 55.56798378068371,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.002678189104786032,
+      "mean_abs_tanh": 0.570793350537618
+    },
+    {
+      "task": 5,
+      "recalls": [
+        0.4266666666666667,
+        0.356,
+        0.36666666666666664,
+        0.312,
+        0.298,
+        0.2906666666666667
+      ],
+      "retention": [
+        0.8111533586818758,
+        0.839622641509434,
+        0.901639344262295,
+        1.0883720930232557,
+        0.8039568345323741,
+        1.0
+      ],
+      "ppl": 14.77955059702101,
+      "ppl_lambada": 60.573794471624005,
+      "invariance_violations": 0,
+      "weights_checked": 1409286144,
+      "mean_room_left": 0.0020380005165255475,
+      "mean_abs_tanh": 0.6004560399977934,
+      "validation": {
+        "arc_easy": 0.6683,
+        "arc_challenge": 0.4067,
+        "hellaswag": 0.5233,
+        "winogrande": 0.555
+      }
+    }
+  ],
+  "consolidations": [
+    {
+      "after_task": 1,
+      "codes_changed_frac": 0.21411717789513723,
+      "validation_before_recovery": {
+        "arc_easy": 0.6983,
+        "arc_challenge": 0.4517,
+        "hellaswag": 0.5667,
+        "winogrande": 0.59
+      },
+      "recovery": {
+        "epochs": 4,
+        "lr": 0.0002,
+        "n_sentences": 1000,
+        "invariance_violations": 0,
+        "recalls": [
+          0.5053333333333333,
+          0.396
+        ],
+        "ppl": 12.376349181622755
+      },
+      "validation_after": {
+        "arc_easy": 0.7267,
+        "arc_challenge": 0.4567,
+        "hellaswag": 0.565,
+        "winogrande": 0.5983
+      }
+    },
+    {
+      "after_task": 3,
+      "codes_changed_frac": 0.24281523341224306,
+      "validation_before_recovery": {
+        "arc_easy": 0.675,
+        "arc_challenge": 0.4,
+        "hellaswag": 0.5417,
+        "winogrande": 0.5817
+      },
+      "recovery": {
+        "epochs": 4,
+        "lr": 0.0002,
+        "n_sentences": 2000,
+        "invariance_violations": 0,
+        "recalls": [
+          0.4766666666666667,
+          0.3953333333333333,
+          0.3873333333333333,
+          0.32066666666666666
+        ],
+        "ppl": 15.261947919742694
+      },
+      "validation_after": {
+        "arc_easy": 0.6733,
+        "arc_challenge": 0.4267,
+        "hellaswag": 0.55,
+        "winogrande": 0.6067
+      }
+    }
+  ],
+  "validations": [
+    {
+      "point": "anchor",
+      "after_task": null,
+      "scores": {
+        "arc_easy": 0.6867,
+        "arc_challenge": 0.4517,
+        "hellaswag": 0.5517,
+        "winogrande": 0.6167
+      }
+    },
+    {
+      "point": "after_task",
+      "after_task": 0,
+      "scores": {
+        "arc_easy": 0.7083,
+        "arc_challenge": 0.45,
+        "hellaswag": 0.53,
+        "winogrande": 0.6
+      }
+    },
+    {
+      "point": "after_task",
+      "after_task": 1,
+      "scores": {
+        "arc_easy": 0.7017,
+        "arc_challenge": 0.4517,
+        "hellaswag": 0.5433,
+        "winogrande": 0.6117
+      }
+    },
+    {
+      "point": "after_consolidation",
+      "after_task": 1,
+      "scores": {
+        "arc_easy": 0.7267,
+        "arc_challenge": 0.4567,
+        "hellaswag": 0.565,
+        "winogrande": 0.5983
+      }
+    },
+    {
+      "point": "after_task",
+      "after_task": 3,
+      "scores": {
+        "arc_easy": 0.7033,
+        "arc_challenge": 0.435,
+        "hellaswag": 0.5367,
+        "winogrande": 0.585
+      }
+    },
+    {
+      "point": "after_consolidation",
+      "after_task": 3,
+      "scores": {
+        "arc_easy": 0.6733,
+        "arc_challenge": 0.4267,
+        "hellaswag": 0.55,
+        "winogrande": 0.6067
+      }
+    },
+    {
+      "point": "after_task",
+      "after_task": 5,
+      "scores": {
+        "arc_easy": 0.6683,
+        "arc_challenge": 0.4067,
+        "hellaswag": 0.5233,
+        "winogrande": 0.555
+      }
+    }
+  ],
+  "minutes": 68.5
+}

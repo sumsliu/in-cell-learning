@@ -1,0 +1,50 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-4B-Base",
+    "n_facts": 1000,
+    "epochs": 24,
+    "rank": 64,
+    "tanh_scale": 40.0,
+    "lr": 0.001,
+    "bs": 8,
+    "margin": 0.01,
+    "seed": 0,
+    "replay_frac": 0.1,
+    "probe_cap": 30000,
+    "map_dtype": "float32",
+    "skip_anchor_eval": false,
+    "eval_dtype": "float32",
+    "target_filter": null,
+    "max_ppl_chunks": 40,
+    "out": "out/exp21_qil_4b.json"
+  },
+  "bits_per_fact": 21.720671786825555,
+  "loss_first": 3.0146117210388184,
+  "loss_last": 0.5380160637199879,
+  "recall": {
+    "trained_inplace": 0.8643333333333333,
+    "original_fp32": 0.0,
+    "anchor_fp32": 0.0,
+    "merged": 0.868
+  },
+  "ppl": {
+    "trained_inplace": 9.976978994390462,
+    "original_fp32": 8.787424464875626,
+    "anchor_fp32": 9.330132064554713,
+    "merged": 9.967392636459318
+  },
+  "ppl_lambada": {
+    "trained_inplace": 39.38145800314305,
+    "original_fp32": 22.977613884560675,
+    "anchor_fp32": 24.409628016447822,
+    "merged": 39.34959152625436
+  },
+  "merge": {
+    "n_layers": 252,
+    "saturation": 0.2513318071461687,
+    "clipped_frac": null,
+    "note": "invariance by construction (bounded tanh fill)"
+  },
+  "heal": null,
+  "minutes": 28.6
+}

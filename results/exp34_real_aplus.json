@@ -1,0 +1,179 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "n_facts": 160,
+    "epochs": 24,
+    "rank": 16,
+    "alpha": 32,
+    "lr": 0.001,
+    "bs": 16,
+    "margin": 0.01,
+    "merge_base": "anchor",
+    "replay_frac": 0.1,
+    "heal_epochs": 4,
+    "heal_lr": 2e-05,
+    "dense_only": false,
+    "no_clamp": false,
+    "probe_cap": 30000,
+    "heal_optim": "adamw",
+    "skip_anchor_eval": false,
+    "save_merged": false,
+    "target_regex": null,
+    "name_filter": "",
+    "eval_dtype": "float32",
+    "eval_device_map": "cuda0",
+    "map_dtype": "float32",
+    "radius": 1.0,
+    "seed": 0,
+    "max_ppl_chunks": 40,
+    "facts_file": "data/all_train.json",
+    "probes_file": "data/all_probes.json",
+    "ckpt": null,
+    "out": "out/exp34_real_aplus.json"
+  },
+  "bits_per_fact": null,
+  "total_bits": null,
+  "loss_first": 3.249737501144409,
+  "loss_last": 0.8642216339707375,
+  "recall": {
+    "base_4bit": 0.0026595744680851063,
+    "adapter": 0.22872340425531915,
+    "original_fp32": 0.005319148936170213,
+    "anchor_fp32": 0.005319148936170213,
+    "merged": 0.2154255319148936,
+    "merged_by_kind": {
+      "medicine": 0.11419753086419752,
+      "technology": 0.9428571428571428,
+      "awards": 0.9090909090909091,
+      "science": 0.0,
+      "news": 0.5
+    }
+  },
+  "ppl": {
+    "anchors_4bit": 11.731271240756799,
+    "adapter": 16.07051758483016,
+    "original_fp32": 10.660358309557296,
+    "anchor_fp32": 11.709622790432856,
+    "merged": 12.498622520960275
+  },
+  "ppl_lambada": {
+    "anchors_4bit": 28.69622169583709,
+    "adapter": 51.591001442751306,
+    "original_fp32": 26.12699319178648,
+    "anchor_fp32": 28.666533055479047,
+    "merged": 36.895404365005064
+  },
+  "merge": {
+    "n_layers": 196,
+    "n_weights": 1409286144,
+    "clipped_frac": 0.25779264526707785,
+    "norm_kept_frac": 0.6855398445901627
+  },
+  "heal": {
+    "recall": 0.2765957446808511,
+    "recall_by_kind": {
+      "medicine": 0.17592592592592593,
+      "technology": 1.0,
+      "awards": 1.0,
+      "science": 0.0,
+      "news": 0.5
+    },
+    "ppl": 13.020842574723313,
+    "ppl_x": 41.8086205769364,
+    "saturation": 0.04275956253210703,
+    "invariance_violations": 0
+  },
+  "worst_layers": [
+    [
+      "model.layers.25.self_attn.k_proj",
+      {
+        "clipped_frac": 0.45572900772094727,
+        "norm_kept_frac": 0.5094879414889011,
+        "delta_norm": 9.493078231811523,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.24.self_attn.o_proj",
+      {
+        "clipped_frac": 0.4549834728240967,
+        "norm_kept_frac": 0.5298228751779168,
+        "delta_norm": 14.443799018859863,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.24.self_attn.k_proj",
+      {
+        "clipped_frac": 0.4325528144836426,
+        "norm_kept_frac": 0.552113713464167,
+        "delta_norm": 8.752636909484863,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.1.self_attn.k_proj",
+      {
+        "clipped_frac": 0.4287881851196289,
+        "norm_kept_frac": 0.5204424703916273,
+        "delta_norm": 10.182345390319824,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.0.mlp.up_proj",
+      {
+        "clipped_frac": 0.42860183119773865,
+        "norm_kept_frac": 0.5459618317279978,
+        "delta_norm": 23.124788284301758,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.0.self_attn.o_proj",
+      {
+        "clipped_frac": 0.42593884468078613,
+        "norm_kept_frac": 0.5864986035678156,
+        "delta_norm": 11.9459228515625,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.22.self_attn.o_proj",
+      {
+        "clipped_frac": 0.41417932510375977,
+        "norm_kept_frac": 0.5814840500675476,
+        "delta_norm": 12.077723503112793,
+        "n": 4194304
+      }
+    ],
+    [
+      "model.layers.1.mlp.up_proj",
+      {
+        "clipped_frac": 0.41200146079063416,
+        "norm_kept_frac": 0.5569609179327102,
+        "delta_norm": 19.218839645385742,
+        "n": 12582912
+      }
+    ],
+    [
+      "model.layers.26.self_attn.k_proj",
+      {
+        "clipped_frac": 0.4032449722290039,
+        "norm_kept_frac": 0.5494698079043371,
+        "delta_norm": 8.039889335632324,
+        "n": 2097152
+      }
+    ],
+    [
+      "model.layers.25.self_attn.o_proj",
+      {
+        "clipped_frac": 0.39757752418518066,
+        "norm_kept_frac": 0.5950573511801043,
+        "delta_norm": 12.670221328735352,
+        "n": 4194304
+      }
+    ]
+  ],
+  "minutes": 5.0
+}
