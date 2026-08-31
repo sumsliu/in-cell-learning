@@ -1,0 +1,13 @@
+# papers and manuscripts never enter this repository
+paper/
+*.pdf
+# ledgers and unpublished results stay in the private working repo
+results/
+out/
+# corpora and API-derived candidates are released separately, if at all
+data/
+# heavyweight artifacts
+*.pt
+*.safetensors
+*.gguf
+__pycache__/
