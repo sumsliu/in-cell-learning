@@ -71,13 +71,28 @@ remain bit-identical, verifiable by integer-domain re-quantization.
 ## Quick start
 
 ```bash
+python experiments/exp_seq.py --model Qwen/Qwen3-1.7B-Base \
+  --tasks 1 --facts-per-task 1000 --dense-fill --lr 2e-4 --epochs 8 \
+  --out out/quickstart.json
+```
+
+Loads the published 4-bit release, trains the paper's champion writer — a
+bounded dense fill in which every weight moves only inside its own
+quantization cell — and verifies in the integer domain that
+re-quantization returns the released codes and scales exactly. (The
+paper's recipe uses 24 epochs; 8 is a fast demo. Setup peaks above 24 GB
+— a 24 GB card OOMs building the cell walls — with ~17 GB allocated in
+steady training, so bring a 32 GB+ GPU or a unified-memory box.)
+
+The champion dense writer and the lighter rank-64 writer share the same
+cells and the same integer-domain guarantee — pick by your card:
+
+```bash
 python experiments/exp5_qil.py --model Qwen/Qwen3-1.7B-Base --n-facts 1000
 ```
 
-Loads the published 4-bit release, trains a bounded in-cell fill (every
-weight re-parameterized to move only inside its quantization cell), and
-verifies in the integer domain that re-quantization returns the released
-codes and scales exactly.
+The rank-64 writer fits a 24 GB card and finishes a reduced run in about
+3 minutes.
 
 ```bash
 python experiments/exp0_clip_rate.py --model Qwen/Qwen3-1.7B-Base --n-facts 1000
