@@ -1112,8 +1112,14 @@ def verify_artifact(model, frozen):
         m_exact = torch.minimum(anch - lo, hi - anch).clamp_min(0.0) * smask
         disp, _t = _displacement(mod, m_exact)
         w = anch + disp
+        # The counting domain is the storable domain, NOT m_exact > 0: after a
+        # fold mod.anchors IS the served weight, so an anchor that has left its
+        # cell has room 0 there and (m_exact > 0) would drop exactly the weights
+        # this check exists to catch (2026-09-02, found by the served-weights
+        # ground truth: 1.25M escapes counted with the original-anchor mask,
+        # 0 with this one). Sub-floor blocks stay exempt through smask.
         _, bad, _ = check_invariance(w, codes_d, absmax_d, bsz,
-                                     writable=(m_exact > 0))
+                                     writable=(smask.reshape(-1) > 0))
         n_bad += bad
         n_tot += w.numel()
     return n_bad, n_tot

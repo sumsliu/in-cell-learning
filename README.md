@@ -64,9 +64,17 @@ remain bit-identical, verifiable by integer-domain re-quantization.
   walls, half-widths, invariance checks, packed serving, clip-merge, codec.
 - `experiments/` — the paper's experiment drivers (single-shot, sequential
   writing with minor/major versions, fusion, capacity, controls).
-- `scripts/` — static envelopes, witnesses, and table generation.
-- `results/` — the archived result files behind every table in the paper,
-  exactly the 79 runs `results/MANIFEST.txt` lists.
+- `scripts/` — static envelopes, witnesses, figure and table generation.
+- `results/` — the archived result files behind every table in the paper:
+  exactly the 79 runs `results/MANIFEST.txt` lists, plus the fold-slack
+  simulation `results/sim_fold_slack.json` (§ Reproducibility).
+- `app/` — the minor-version loop as a single page (`app/app.py`): drop in
+  documents, train a bounded fill, read recall / drift / the in-cell check,
+  serve, roll back.
+- `server/setup.sh` — idempotent Python 3.12 + uv environment that prints the
+  resolved library versions and GPU before running the test suite.
+- `tests/` — unit tests of the codec (`tests/test_codec.py`): nesting,
+  4-bit truncation, exact reconstruction on randomly quantized blocks.
 
 ## Quick start
 
